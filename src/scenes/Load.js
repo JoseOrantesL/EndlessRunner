@@ -5,7 +5,6 @@ class Load extends Phaser.Scene {
 
     preload() {
         // loading bar
-        // see: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/loader/
         let loadingBar = this.add.graphics();
         this.load.on('progress', (value) => {
             loadingBar.clear();                                 // reset fill/line style
@@ -17,23 +16,19 @@ class Load extends Phaser.Scene {
         });
             
             //Load images
-            this.load.image("street", "./assets/images/street.png");
-            this.load.image("obstacle", "./assets/images/obstacle2.png");
-            this.load.spritesheet("car", "./assets/images/sprite.png", {frameWidth: 39, frameHeight: 21});
+            this.load.image("street", "././assets/images/street.png");
+            this.load.image("flag", "././assets/images/flag.png");
+            this.load.image("obstacle", "././assets/images/obstacle2.png");
+            this.load.spritesheet("car", "././assets/images/sprite.png", {frameWidth: 39, frameHeight: 21});
             //Load Sfx
-            this.load.audio("accel", "./assets/sfx/fast.mp3");
-            this.load.audio("brake", "./assets/sfx/brake.mp3");
-            this.load.audio("drift", "./assets/sfx/driftfx.mp3");
-            this.load.audio("crash", "./assets/sfx/crash.mp3");
+            this.load.audio("bgm", "././assets/sfx/song.mp3");
+            this.load.audio("accel", "././assets/sfx/fast.mp3");
+            this.load.audio("brake", "././assets/sfx/brake.mp3");
+            this.load.audio("drift", "././assets/sfx/driftfx.mp3");
+            this.load.audio("crash", "././assets/sfx/crash.mp3");
     }
 
     create() {
-        // check for local storage browser support
-        if(window.localStorage) {
-            console.log('Local storage supported');
-        } else {
-            console.log('Local storage not supported');
-        }
 
         this.anims.create({
             key: "lft",

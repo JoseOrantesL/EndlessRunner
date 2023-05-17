@@ -3,7 +3,10 @@ let config = {
   type: Phaser.AUTO,
   width: 720,
   height: 640,
-  scene: [Load, Menu, Play, GameOver],
+  scale: {
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  scene: [Load, Menu, Instruct, Play, GameOver],
   physics: {
     default: 'arcade',
     debug: false
@@ -23,7 +26,7 @@ let highScore = 0;
 const carHeight = 150;
 const carWidth = 150;
 let timer = 2500;
-let clock = 0;
+let clock = 1;
 let centerX = game.config.width/2;
 let centerY = game.config.height/2;
 let carVelocityMin = 1;

@@ -6,14 +6,12 @@ class Play extends Phaser.Scene {
     }
 
     create() {
-
+      this.bgm = this.sound.add('bgm', {volume: 0.5, loop: true});
+      this.bgm.play();
       let scoreConfig = {
-        fontFamily: 'Courier',
+        fontFamily: 'Poppins',
         fontSize: '20px',
         color: '#000000',
-        scale: {
-          autoCenter: Phaser.Scale.CENTER_BOTH
-        },
         padding: {
         top: 5,
         bottom: 5,
@@ -23,12 +21,13 @@ class Play extends Phaser.Scene {
 
       highScore = clock;
       clock = 0;
+      carVelocityMin = 1;
+      carVelocityMax = 5;
+
       this.carSpeed = -450;
       this.carSpeedMax = -1000;
 
       this.street = this.add.tileSprite(0,0, 720, 640, 'street').setOrigin(0,0);
-
-
 
       this.player = this.physics.add.sprite(50, game.config.height/2, "car");
       this.player.body.onCollide = true;
@@ -173,6 +172,7 @@ class Play extends Phaser.Scene {
 
     collisionHappened(){
       this.crash.play();
+      this.bgm.stop();
       this.player.destroy();
       this.countdown.destroy();
       this.scene.start('gameOverScene');
