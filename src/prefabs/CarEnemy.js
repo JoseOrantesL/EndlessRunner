@@ -1,6 +1,6 @@
 class CarEnemy extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, velocity){
-        super(scene, game.config.width + carWidth, Phaser.Math.Between(carHeight, game.config.height), 'obstacle');
+        super(scene, game.config.width + carWidth, Phaser.Math.Between(0, game.config.height), 'obstacle');
         this.ps = scene;
 
         //Physics set up
