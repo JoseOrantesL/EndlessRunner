@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
     }
 
     create() {
-      this.bgm = this.sound.add('bgm', {volume: 0.5, loop: true});
+      this.bgm = this.sound.add('bgm', {volume: 0.1, loop: true});
       this.bgm.play();
       let scoreConfig = {
         fontFamily: 'Poppins',
