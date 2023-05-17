@@ -39,27 +39,27 @@ class Play extends Phaser.Scene {
 
       this.forward = this.sound.add('accel', {
         mute: false,
-        volume: 0.5,
+        volume: 0.1,
         rate: 1,
         loop: false
       });
       this.brake = this.sound.add('brake', {
         mute: false,
-        volume: 0.5,
+        volume: 0.1,
         rate: 1,
         loop: false
       });
 
       this.drift = this.sound.add('drift', {
         mute: false,
-        volume: 0.5,
+        volume: 0.1,
         rate: 1,
         loop: false
       });
 
       this.crash = this.sound.add('crash', {
         mute: false,
-        volume: 0.5,
+        volume: 0.1,
         rate: 1,
         loop: false
       });
